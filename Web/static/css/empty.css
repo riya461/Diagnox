@@ -1,0 +1,11 @@
+.empty-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+}
+
+.empty-main>div {
+  font-size: 22px;
+}

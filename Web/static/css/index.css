@@ -1,0 +1,64 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: calc(100vh - 72px);
+}
+
+.pat-list {
+  width: 220px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #aaa;
+  padding-top: 30px;
+  background-color: #f7f7f7;
+}
+
+.pat-list>div {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-list {
+  padding: 35px 35px 35px 20px;
+  flex: 1;
+}
+
+.patient_tile {
+  border: none;
+  background-color: #0000;
+  font-size: 16px;
+
+  padding: 10px 16px;
+  transition: background-color 150ms;
+  cursor: pointer;
+}
+
+.patient_tile:hover {
+  background-color: #00000016;
+}
+
+.img-grid {
+  padding-top: 50px;
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fit, 200px);
+}
+
+.scan-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.img-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 15px;
+  padding-left: 30px;
+}

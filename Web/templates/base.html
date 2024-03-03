@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/base.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>PillPal</title>
+  </head>
+
+  <body>
+    <nav class="main-nav">
+      <div class="logo">Rex Web</div>
+      <div class="username">username</div>
+    </nav>
+    <div class="container">{% block content %} {% endblock %}</div>
+  </body>
+
+  <script>
+    const labels = {{ labels | tojson}};
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Level',
+            backgroundColor: 'rgb(7, 70, 219)',
+            borderColor: 'rgb(7, 70, 219)',
+            data: {{ data | tojson}},
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: { maintainAspectRatio: false }
+    };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+  </script>
+</html>
